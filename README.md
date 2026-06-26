@@ -63,6 +63,16 @@ Swap it for the real number and you're done.
 - [x] **Stage 1 — Structure & shell** (nav, EN/AR toggle, branding, responsive, footer)
 - [x] **Stage 2 — Seniors (umbrella) landing** (hero, "what is Seniors", the three
       parts as cards with a path into each, values strip, closing CTA)
-- [ ] Stage 3 — Seniors Clinic
-- [ ] Stage 4 — Seniors Connect
-- [ ] Stage 5 — Polish
+- [x] **Stage 3 — Seniors Clinic** (services: clinic/home visits, telemedicine,
+      WhatsApp consultations; who it's for; WhatsApp booking CTA)
+- [x] **Stage 4 — Seniors Connect** (activities: Memory Café, book club, walks,
+      cultural trips, technology sessions, Memories Studio; join/volunteer; contact)
+- [x] **Stage 5 — Polish** (imagery placeholders, shared contact section,
+      consistent spacing, final EN/AR pass in both directions — no RTL overflow)
+
+## Live preview
+
+The site auto-deploys to **GitHub Pages** on every push to the development branch:
+**https://omarmskhater186-dev.github.io/Seniors-website/**
+
+(Workflow: `.github/workflows/pages.yml`.)

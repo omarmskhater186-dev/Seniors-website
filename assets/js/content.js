@@ -98,22 +98,138 @@ window.SENIORS_CONTENT = {
   /* ===================================================================== */
   /* PART 2 — Seniors Clinic                                                */
   /* ===================================================================== */
+
+  /* Hero */
   "clinic.title":      { en: "Seniors Clinic",
                          ar: "عيادة سينيورز" },
   "clinic.lead":       { en: "Specialist geriatric medical care.",
                          ar: "رعاية طبية متخصصة لكبار السن." },
-  "clinic.body":       { en: "Our medical practice. (Services content coming in Stage 3.)",
-                         ar: "ممارستنا الطبية. (محتوى الخدمات في المرحلة الثالثة.)" },
+  "clinic.body":       { en: "Expert, unhurried medical care designed around older adults — at the clinic, at home, or online. Doctors who take the time to listen, explain clearly, and care for the whole person.",
+                         ar: "رعاية طبية متخصصة دون استعجال، مصمَّمة لكبار السن — في العيادة أو في المنزل أو عبر الإنترنت. أطباء يمنحونك الوقت للإصغاء والشرح بوضوح والعناية بالإنسان بأكمله." },
+
+  /* Services */
+  "clinic.services.title":  { en: "How we care for you",
+                              ar: "كيف نعتني بك" },
+  "clinic.services.intro":  { en: "Four ways to reach our doctors — choose whatever is easiest for you and your family.",
+                              ar: "أربع طرق للوصول إلى أطبائنا — اختر ما يناسبك ويناسب عائلتك." },
+
+  "clinic.svc.visit.title":   { en: "Clinic visits",
+                                ar: "زيارات العيادة" },
+  "clinic.svc.visit.desc":    { en: "Comprehensive geriatric assessments and follow-ups in a calm, accessible clinic.",
+                                ar: "تقييمات شاملة لكبار السن ومتابعات في عيادة هادئة وسهلة الوصول." },
+
+  "clinic.svc.home.title":    { en: "Home visits",
+                                ar: "الزيارات المنزلية" },
+  "clinic.svc.home.desc":     { en: "When travel is hard, our doctors come to you — full medical care in the comfort of home.",
+                                ar: "عندما يصعب التنقّل، يأتي أطباؤنا إليك — رعاية طبية كاملة في راحة منزلك." },
+
+  "clinic.svc.tele.title":    { en: "Telemedicine",
+                                ar: "الطب عن بُعد" },
+  "clinic.svc.tele.desc":     { en: "Video consultations from anywhere — ideal for reviews, results, and quick advice.",
+                                ar: "استشارات بالفيديو من أي مكان — مثالية للمراجعات والنتائج والنصائح السريعة." },
+
+  "clinic.svc.whatsapp.title":{ en: "WhatsApp consultations",
+                                ar: "استشارات واتساب" },
+  "clinic.svc.whatsapp.desc": { en: "Message our care team for guidance, prescriptions follow-up, and simple questions.",
+                                ar: "راسل فريق الرعاية للحصول على الإرشاد ومتابعة الوصفات والأسئلة البسيطة." },
+
+  /* Who it's for */
+  "clinic.who.title":  { en: "Who it’s for",
+                         ar: "لمن هذه الخدمة" },
+  "clinic.who.intro":  { en: "Seniors Clinic supports older adults and the families caring for them, including:",
+                         ar: "تدعم عيادة سينيورز كبار السن والعائلات التي ترعاهم، ويشمل ذلك:" },
+  "clinic.who.1":      { en: "Managing long-term conditions like diabetes, blood pressure and heart health",
+                         ar: "إدارة الأمراض المزمنة مثل السكري وضغط الدم وصحة القلب" },
+  "clinic.who.2":      { en: "Memory concerns, dementia care, and cognitive assessments",
+                         ar: "مشكلات الذاكرة، ورعاية الخرف، وتقييمات الإدراك" },
+  "clinic.who.3":      { en: "Mobility, falls prevention, and safe medication review",
+                         ar: "الحركة، والوقاية من السقوط، ومراجعة الأدوية بأمان" },
+  "clinic.who.4":      { en: "Families who want one trusted doctor to coordinate everything",
+                         ar: "العائلات التي تريد طبيباً موثوقاً واحداً لتنسيق كل شيء" },
+
+  /* Booking */
+  "clinic.book.title": { en: "Book an appointment",
+                         ar: "احجز موعداً" },
+  "clinic.book.body":  { en: "Booking is simple — tap the button to start a WhatsApp chat with our clinic. Tell us what you need and we’ll arrange the right visit.",
+                         ar: "الحجز بسيط — اضغط الزر لبدء محادثة واتساب مع عيادتنا. أخبرنا بما تحتاجه وسنرتّب الزيارة المناسبة." },
 
   /* ===================================================================== */
   /* PART 3 — Seniors Connect                                               */
   /* ===================================================================== */
+
+  /* Hero */
   "connect.title":     { en: "Seniors Connect",
                          ar: "مجتمع سينيورز" },
   "connect.lead":      { en: "Community and life-enrichment programmes.",
                          ar: "برامج مجتمعية لإثراء الحياة." },
-  "connect.body":      { en: "Our community programme. (Activities content coming in Stage 4.)",
-                         ar: "برنامجنا المجتمعي. (محتوى الأنشطة في المرحلة الرابعة.)" },
+  "connect.body":      { en: "Good health is more than medicine. Seniors Connect brings older adults together for friendship, learning, and joy — a warm community where every week holds something to look forward to.",
+                         ar: "الصحة الجيدة أكثر من الدواء. يجمع مجتمع سينيورز كبار السن من أجل الصداقة والتعلّم والبهجة — مجتمع دافئ يحمل كل أسبوع ما نتطلّع إليه." },
+
+  /* Activities */
+  "connect.act.title":  { en: "Our activities",
+                          ar: "أنشطتنا" },
+  "connect.act.intro":  { en: "A varied weekly programme — join the ones you love.",
+                          ar: "برنامج أسبوعي متنوّع — انضم إلى ما تحب." },
+
+  "connect.act.memory.title":  { en: "Memory Café",
+                                 ar: "مقهى الذاكرة" },
+  "connect.act.memory.desc":   { en: "A relaxed, supportive gathering for people with memory loss and their carers.",
+                                 ar: "لقاء هادئ وداعم للأشخاص الذين يعانون من فقدان الذاكرة ومن يرعونهم." },
+
+  "connect.act.book.title":    { en: "Book club",
+                                 ar: "نادي الكتاب" },
+  "connect.act.book.desc":     { en: "Lively conversations about great reads — in Arabic and English.",
+                                 ar: "نقاشات حيّة حول قراءات رائعة — بالعربية والإنجليزية." },
+
+  "connect.act.walks.title":   { en: "Walks",
+                                 ar: "المشي" },
+  "connect.act.walks.desc":    { en: "Gentle group walks that keep body and spirits moving, at an easy pace.",
+                                 ar: "نزهات مشي جماعية لطيفة تحافظ على نشاط الجسد والروح بوتيرة مريحة." },
+
+  "connect.act.trips.title":   { en: "Cultural trips",
+                                 ar: "الرحلات الثقافية" },
+  "connect.act.trips.desc":    { en: "Outings to Cairo’s museums, gardens and landmarks — comfortable and well-supported.",
+                                 ar: "زيارات لمتاحف القاهرة وحدائقها ومعالمها — مريحة ومدعومة جيداً." },
+
+  "connect.act.tech.title":    { en: "Technology sessions",
+                                 ar: "جلسات التكنولوجيا" },
+  "connect.act.tech.desc":     { en: "Friendly help with phones, video calls and apps to stay connected with family.",
+                                 ar: "مساعدة ودودة في الهواتف ومكالمات الفيديو والتطبيقات للبقاء على تواصل مع العائلة." },
+
+  "connect.act.studio.title":  { en: "Memories Studio",
+                                 ar: "استوديو الذكريات" },
+  "connect.act.studio.desc":   { en: "Recording life stories and treasured memories to keep and share with loved ones.",
+                                 ar: "تسجيل قصص الحياة والذكريات الغالية للاحتفاظ بها ومشاركتها مع الأحبّة." },
+
+  /* Join / volunteer */
+  "connect.join.title":   { en: "Join us or lend a hand",
+                            ar: "انضم إلينا أو قدّم المساعدة" },
+  "connect.join.member.title": { en: "Become a member",
+                                 ar: "كن عضواً" },
+  "connect.join.member.desc":  { en: "Anyone is welcome. Message us to learn about the weekly schedule and how to take part.",
+                                 ar: "الجميع مرحّب بهم. راسلنا لتتعرّف على الجدول الأسبوعي وكيفية المشاركة." },
+  "connect.join.volunteer.title": { en: "Volunteer with us",
+                                    ar: "تطوّع معنا" },
+  "connect.join.volunteer.desc":  { en: "Share your time, skills or company. Volunteers are the heart of our community.",
+                                    ar: "شارك وقتك أو مهاراتك أو رفقتك. المتطوّعون هم قلب مجتمعنا." },
+
+  /* Contact */
+  "connect.contact.title": { en: "Come say hello",
+                             ar: "تعال وقل مرحباً" },
+  "connect.contact.body":  { en: "Curious about Seniors Connect? Send us a message on WhatsApp — we’d love to welcome you.",
+                             ar: "هل أنت مهتم بمجتمع سينيورز؟ راسلنا على واتساب — يسعدنا الترحيب بك." },
+
+  /* ===================================================================== */
+  /* Shared contact section (appears on every tab)                          */
+  /* ===================================================================== */
+  "contact.title":     { en: "Get in touch",
+                         ar: "تواصل معنا" },
+  "contact.body":      { en: "We’re here to help you and your family. Reach us whichever way is easiest.",
+                         ar: "نحن هنا لمساعدتك ومساعدة عائلتك. تواصل معنا بالطريقة الأسهل لك." },
+  "contact.whatsappLabel": { en: "WhatsApp",       ar: "واتساب" },
+  "contact.phoneLabel":    { en: "Phone",          ar: "الهاتف" },
+  "contact.emailLabel":    { en: "Email",          ar: "البريد الإلكتروني" },
+  "contact.addressLabel":  { en: "Location",       ar: "الموقع" },
 
   /* ===================================================================== */
   /* Footer                                                                 */

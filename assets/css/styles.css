@@ -234,7 +234,72 @@ main { display: block; }
 .section { padding: clamp(2rem, 5vw, 3.5rem) 0; }
 .section--soft { background: var(--color-bg-soft); }
 .section--cta { background: var(--color-bg-soft); }
-.section-title { text-align: center; margin-bottom: 1.5rem; }
+.section-title { text-align: center; margin-bottom: 0.5rem; }
+.section-intro { text-align: center; color: var(--color-muted); margin: 0 auto 2rem; }
+
+/* Hero split layout (text + imagery placeholder) */
+.hero-split { display: grid; gap: var(--space); align-items: center; grid-template-columns: 1fr; }
+
+/* Imagery placeholder — a calm box standing in for a real photo */
+.media-placeholder {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  min-height: 220px;
+  border: 2px dashed var(--metal-gray);
+  border-radius: var(--radius);
+  background: var(--white);
+  color: var(--metal-gray);
+}
+.media-placeholder .media-mark { font-size: 2.5rem; color: var(--baby-blue); }
+.media-placeholder .media-label { font-weight: 600; letter-spacing: 0.03em; }
+
+/* Bulleted "check" list */
+.check-list { list-style: none; padding: 0; margin: 1rem 0 0; max-width: 60ch; }
+.check-list li {
+  position: relative;
+  padding-inline-start: 2.2rem;
+  margin-bottom: 0.9rem;
+}
+.check-list li::before {
+  content: "✓";
+  position: absolute;
+  inset-inline-start: 0;
+  top: 0;
+  width: 1.6rem;
+  height: 1.6rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--baby-blue);
+  color: var(--aegean-blue);
+  border-radius: 50%;
+  font-weight: 800;
+  font-size: 0.95rem;
+}
+
+/* Shared contact section */
+.contact { padding: clamp(2rem, 5vw, 3.5rem) 0; background: var(--white); }
+.contact-grid { display: grid; gap: var(--space); grid-template-columns: 1fr; }
+.contact-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.3rem;
+  text-align: center;
+  padding: 1.5rem 1rem;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  text-decoration: none;
+  color: var(--aegean-blue);
+  background: var(--color-bg-soft);
+}
+a.contact-item:hover { border-color: var(--oceana-blue); }
+.contact-mark { font-size: 1.8rem; }
+.contact-label { font-weight: 700; }
+.contact-value { color: var(--color-muted); word-break: break-word; }
 
 /* Layout helpers */
 .container.narrow { max-width: 760px; }
@@ -272,9 +337,12 @@ main { display: block; }
   margin-bottom: 0.5rem;
 }
 
-/* ---- Feature blocks (values) ---- */
+/* ---- Feature blocks (values / services) ---- */
 .feature { text-align: center; padding: 1rem; }
 .feature p { margin-inline: auto; color: var(--color-muted); }
+/* Left-aligned variant used for clinic services */
+.feature--left { text-align: start; }
+.feature--left p { margin-inline: 0; }
 .feature-mark {
   display: inline-flex;
   align-items: center;
@@ -362,10 +430,17 @@ main { display: block; }
   .header-inner { flex-wrap: wrap; }
 }
 
+@media (min-width: 600px) {
+  .grid-cards.grid-2 { grid-template-columns: repeat(2, 1fr); }
+  .contact-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
 @media (min-width: 700px) {
   .grid-cards.grid-3 { grid-template-columns: repeat(3, 1fr); }
 }
 
 @media (min-width: 861px) {
   .footer-grid { grid-template-columns: 2fr 1fr; }
+  .hero-split { grid-template-columns: 1.2fr 0.8fr; }
+  .contact-grid { grid-template-columns: repeat(4, 1fr); }
 }

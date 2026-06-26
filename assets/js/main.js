@@ -54,12 +54,36 @@
       a.setAttribute("href", waLink);
     });
 
+    /* Fill contact details from config (phone / email / address). These are
+       not in content.js because they're the same in both languages — except
+       the address, which can differ. */
+    fillContact(lang);
+
     try { localStorage.setItem(STORAGE_KEY, lang); } catch (e) {}
   }
 
   function toggleLang() {
     var current = document.body.getAttribute("data-lang") || "en";
     applyLang(current === "en" ? "ar" : "en");
+  }
+
+  /* Fill phone / email / address from config.js into the contact section
+     and footer, and make the phone/email rows tappable links. */
+  function fillContact(lang) {
+    var phone = CONFIG.phoneDisplay || "";
+    var email = CONFIG.email || "";
+    var addr  = (CONFIG.addressLine && CONFIG.addressLine[lang]) || "";
+
+    document.querySelectorAll("[data-contact-phone-text]").forEach(function (n) { n.textContent = phone; });
+    document.querySelectorAll("[data-contact-email-text]").forEach(function (n) { n.textContent = email; });
+    document.querySelectorAll("[data-contact-address]").forEach(function (n) { n.textContent = addr; });
+
+    document.querySelectorAll("[data-contact-phone]").forEach(function (a) {
+      a.setAttribute("href", "tel:" + phone.replace(/\s+/g, ""));
+    });
+    document.querySelectorAll("[data-contact-email]").forEach(function (a) {
+      a.setAttribute("href", "mailto:" + email);
+    });
   }
 
   /* ---- Tabs (the three parts) ---------------------------------------- */
