@@ -99,17 +99,29 @@ a { color: var(--oceana-blue); }
   border-radius: 6px;
 }
 
-/* Skip link for screen-reader / keyboard users. */
+/* Skip link for screen-reader / keyboard users.
+   Hidden with the clip technique (NOT left:-9999px, which causes huge
+   horizontal overflow in RTL); it reappears on keyboard focus. */
 .skip-link {
   position: absolute;
-  left: -9999px;
-  top: 0;
+  width: 1px; height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  white-space: nowrap;
   background: var(--aegean-blue);
   color: var(--white);
   padding: 0.75rem 1rem;
   z-index: 100;
 }
-.skip-link:focus { left: 0; }
+.skip-link:focus {
+  width: auto; height: auto;
+  overflow: visible;
+  clip: auto;
+  clip-path: none;
+  inset-inline-start: 0;
+  top: 0;
+}
 
 img, svg { max-width: 100%; height: auto; }
 
@@ -209,9 +221,72 @@ main { display: block; }
   padding: clamp(2.5rem, 6vw, 5rem) 0;
 }
 .hero .lead { font-size: var(--fs-lead); color: var(--color-secondary); font-weight: 600; }
+.hero .eyebrow {
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--oceana-blue);
+  margin-bottom: 0.5rem;
+}
+.hero .hero-body { font-size: var(--fs-lead); max-width: 60ch; }
 
 .section { padding: clamp(2rem, 5vw, 3.5rem) 0; }
 .section--soft { background: var(--color-bg-soft); }
+.section--cta { background: var(--color-bg-soft); }
+.section-title { text-align: center; margin-bottom: 1.5rem; }
+
+/* Layout helpers */
+.container.narrow { max-width: 760px; }
+.center { text-align: center; }
+.center p { margin-inline: auto; }
+.center-row { justify-content: center; }
+
+/* ---- Card grids ---- */
+.grid-cards { display: grid; gap: var(--space); grid-template-columns: 1fr; }
+
+/* ---- Cards (the three parts) ---- */
+.card {
+  position: relative;
+  background: var(--white);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  padding: 1.75rem;
+  box-shadow: var(--shadow);
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+.card h3 { font-size: 1.5rem; }
+.card p { flex: 1; color: var(--color-muted); }
+.card .btn { margin-top: 1rem; align-self: flex-start; }
+.card--link { border-top: 5px solid var(--baby-blue); }
+.card-badge {
+  align-self: flex-start;
+  background: var(--baby-blue);
+  color: var(--aegean-blue);
+  font-size: 0.8rem;
+  font-weight: 700;
+  padding: 0.25rem 0.7rem;
+  border-radius: 999px;
+  margin-bottom: 0.5rem;
+}
+
+/* ---- Feature blocks (values) ---- */
+.feature { text-align: center; padding: 1rem; }
+.feature p { margin-inline: auto; color: var(--color-muted); }
+.feature-mark {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: var(--color-bg-soft);
+  color: var(--oceana-blue);
+  font-size: 2rem;
+  margin-bottom: 0.75rem;
+}
 
 /* ---- Footer ---- */
 .site-footer {
@@ -285,6 +360,10 @@ main { display: block; }
   .tab-btn { width: 100%; text-align: start; }
 
   .header-inner { flex-wrap: wrap; }
+}
+
+@media (min-width: 700px) {
+  .grid-cards.grid-3 { grid-template-columns: repeat(3, 1fr); }
 }
 
 @media (min-width: 861px) {

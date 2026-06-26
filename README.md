@@ -61,7 +61,8 @@ Swap it for the real number and you're done.
 ## Build status (stages)
 
 - [x] **Stage 1 — Structure & shell** (nav, EN/AR toggle, branding, responsive, footer)
-- [ ] Stage 2 — Seniors (umbrella) landing
+- [x] **Stage 2 — Seniors (umbrella) landing** (hero, "what is Seniors", the three
+      parts as cards with a path into each, values strip, closing CTA)
 - [ ] Stage 3 — Seniors Clinic
 - [ ] Stage 4 — Seniors Connect
 - [ ] Stage 5 — Polish
