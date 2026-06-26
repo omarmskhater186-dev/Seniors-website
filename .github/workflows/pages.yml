@@ -1,0 +1,43 @@
+name: Deploy site to GitHub Pages
+
+# Publishes the static site (repo root) to GitHub Pages so it can be
+# previewed at a live URL. Runs on pushes to the development branch and
+# can also be triggered manually from the Actions tab.
+on:
+  push:
+    branches: ["claude/seniors-bilingual-website-0zfe74"]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# Only one deployment at a time; newer runs supersede in-progress ones.
+concurrency:
+  group: "pages"
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Configure Pages (auto-enables Pages if needed)
+        uses: actions/configure-pages@v5
+        with:
+          enablement: true
+
+      - name: Upload site artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: "."
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
