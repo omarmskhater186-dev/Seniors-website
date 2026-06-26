@@ -1,0 +1,292 @@
+/* =============================================================================
+   Seniors — STYLES
+   -----------------------------------------------------------------------------
+   Sections:
+     1. Brand tokens (colours, fonts, spacing)  ← edit brand here
+     2. Base & accessibility (large text, focus, contrast)
+     3. Layout (header, nav, tabs, panels, footer)
+     4. Components (buttons, language toggle)
+     5. Right-to-left (Arabic) adjustments
+     6. Responsive (phone / tablet / desktop)
+   ========================================================================== */
+
+/* ---- Fonts: load both explicitly ------------------------------------- */
+/* English: Montserrat (Google Fonts). */
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap");
+
+/* Arabic: DG Sahabah. Drop the real font file into assets/fonts/ and this
+   @font-face will pick it up. Until then we fall back to a calm web Arabic
+   face (Cairo) so the site still reads well in Arabic. */
+@import url("https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700&display=swap");
+@font-face {
+  font-family: "DG Sahabah";
+  src: url("../fonts/DGSahabah.woff2") format("woff2"),
+       url("../fonts/DGSahabah.woff")  format("woff");
+  font-weight: 400 800;
+  font-display: swap;
+}
+
+/* ===================================================================== */
+/* 1. BRAND TOKENS                                                        */
+/* ===================================================================== */
+:root {
+  /* Brand palette — use exactly */
+  --aegean-blue:  #144053;   /* primary / headers / dark text */
+  --baby-blue:    #6dcad6;   /* accents / highlights */
+  --oceana-blue:  #489399;   /* secondary */
+  --metal-gray:   #9c9da0;   /* muted text / borders */
+  --cloudy-gray:  #dddddd;   /* soft backgrounds / dividers */
+  --white:        #ffffff;
+
+  /* Roles */
+  --color-text:       var(--aegean-blue);
+  --color-muted:      #5f6164;            /* darker than metal-gray for AA contrast on white */
+  --color-bg:         var(--white);
+  --color-bg-soft:    #f3f7f8;            /* very soft tint of the blues */
+  --color-border:     var(--cloudy-gray);
+  --color-accent:     var(--baby-blue);
+  --color-secondary:  var(--oceana-blue);
+
+  /* Fonts */
+  --font-en: "Montserrat", system-ui, Arial, sans-serif;
+  --font-ar: "DG Sahabah", "Cairo", "Segoe UI", Tahoma, sans-serif;
+
+  /* Senior-friendly sizing */
+  --fs-base: 1.25rem;        /* 20px — large default text */
+  --fs-lead: 1.5rem;
+  --fs-h1:   clamp(2.2rem, 5vw, 3.5rem);
+  --fs-h2:   clamp(1.6rem, 3.5vw, 2.4rem);
+  --line:    1.7;
+
+  --space:   1.5rem;
+  --radius:  14px;
+  --tap:     52px;           /* generous minimum tap target */
+  --maxw:    1140px;
+  --shadow:  0 6px 24px rgba(20, 64, 83, 0.10);
+}
+
+/* ===================================================================== */
+/* 2. BASE & ACCESSIBILITY                                                */
+/* ===================================================================== */
+*, *::before, *::after { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  font-family: var(--font-en);
+  font-size: var(--fs-base);
+  line-height: var(--line);
+  color: var(--color-text);
+  background: var(--color-bg);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* When Arabic is active, the whole page uses the Arabic font. */
+body[data-lang="ar"] { font-family: var(--font-ar); }
+
+h1, h2, h3 { color: var(--aegean-blue); line-height: 1.25; margin: 0 0 0.5em; }
+h1 { font-size: var(--fs-h1); font-weight: 800; }
+h2 { font-size: var(--fs-h2); font-weight: 700; }
+p  { margin: 0 0 1em; max-width: 65ch; }
+
+a { color: var(--oceana-blue); }
+
+/* Visible, high-contrast focus for keyboard users. */
+:focus-visible {
+  outline: 3px solid var(--oceana-blue);
+  outline-offset: 3px;
+  border-radius: 6px;
+}
+
+/* Skip link for screen-reader / keyboard users. */
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  top: 0;
+  background: var(--aegean-blue);
+  color: var(--white);
+  padding: 0.75rem 1rem;
+  z-index: 100;
+}
+.skip-link:focus { left: 0; }
+
+img, svg { max-width: 100%; height: auto; }
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  * { transition: none !important; }
+}
+
+/* ===================================================================== */
+/* 3. LAYOUT                                                              */
+/* ===================================================================== */
+.container { width: 100%; max-width: var(--maxw); margin: 0 auto; padding: 0 var(--space); }
+
+/* ---- Header ---- */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: var(--white);
+  border-bottom: 1px solid var(--color-border);
+  box-shadow: var(--shadow);
+}
+.header-inner {
+  display: flex;
+  align-items: center;
+  gap: var(--space);
+  padding: 0.75rem var(--space);
+  max-width: var(--maxw);
+  margin: 0 auto;
+}
+.brand { display: flex; align-items: center; gap: 0.6rem; text-decoration: none; }
+.brand img { height: 44px; width: auto; }
+.brand .brand-text { display: flex; flex-direction: column; line-height: 1.1; }
+.brand .brand-name { font-weight: 800; color: var(--aegean-blue); font-size: 1.4rem; }
+.brand .brand-tagline { font-size: 0.85rem; color: var(--color-muted); }
+
+/* ---- Navigation tabs ---- */
+.site-nav { display: flex; align-items: center; gap: 0.4rem; margin-inline-start: auto; }
+
+.tab-btn {
+  appearance: none;
+  border: 2px solid transparent;
+  background: transparent;
+  color: var(--aegean-blue);
+  font: inherit;
+  font-weight: 600;
+  min-height: var(--tap);
+  padding: 0.4rem 1rem;
+  border-radius: var(--radius);
+  cursor: pointer;
+}
+.tab-btn:hover { background: var(--color-bg-soft); }
+.tab-btn.is-active {
+  background: var(--aegean-blue);
+  color: var(--white);
+}
+
+/* ---- Language toggle ---- */
+.lang-toggle {
+  appearance: none;
+  border: 2px solid var(--oceana-blue);
+  background: var(--white);
+  color: var(--oceana-blue);
+  font: inherit;
+  font-weight: 700;
+  min-height: var(--tap);
+  min-width: var(--tap);
+  padding: 0.4rem 1rem;
+  border-radius: var(--radius);
+  cursor: pointer;
+}
+.lang-toggle:hover { background: var(--oceana-blue); color: var(--white); }
+
+/* ---- Mobile menu button (hidden on desktop) ---- */
+.menu-toggle {
+  display: none;
+  appearance: none;
+  border: 2px solid var(--color-border);
+  background: var(--white);
+  color: var(--aegean-blue);
+  font-size: 1.6rem;
+  min-height: var(--tap);
+  min-width: var(--tap);
+  border-radius: var(--radius);
+  cursor: pointer;
+}
+
+/* ---- Main / panels ---- */
+main { display: block; }
+
+.tab-panel { animation: fade 0.25s ease; }
+.tab-panel[hidden] { display: none; }
+@keyframes fade { from { opacity: 0; } to { opacity: 1; } }
+
+.hero {
+  background: linear-gradient(160deg, var(--color-bg-soft), var(--white));
+  padding: clamp(2.5rem, 6vw, 5rem) 0;
+}
+.hero .lead { font-size: var(--fs-lead); color: var(--color-secondary); font-weight: 600; }
+
+.section { padding: clamp(2rem, 5vw, 3.5rem) 0; }
+.section--soft { background: var(--color-bg-soft); }
+
+/* ---- Footer ---- */
+.site-footer {
+  background: var(--aegean-blue);
+  color: var(--white);
+  padding: clamp(2rem, 5vw, 3rem) 0;
+  margin-top: 2rem;
+}
+.site-footer a { color: var(--baby-blue); }
+.footer-grid { display: grid; gap: var(--space); grid-template-columns: 1fr; }
+.site-footer h3 { color: var(--white); }
+.footer-bottom {
+  border-top: 1px solid rgba(255,255,255,0.2);
+  margin-top: var(--space);
+  padding-top: var(--space);
+  font-size: 0.95rem;
+  color: var(--cloudy-gray);
+}
+
+/* ===================================================================== */
+/* 4. COMPONENTS                                                          */
+/* ===================================================================== */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  min-height: var(--tap);
+  padding: 0.75rem 1.5rem;
+  border-radius: var(--radius);
+  font-weight: 700;
+  text-decoration: none;
+  border: 2px solid transparent;
+  cursor: pointer;
+}
+.btn--primary { background: var(--oceana-blue); color: var(--white); }
+.btn--primary:hover { background: var(--aegean-blue); }
+.btn--whatsapp { background: #25d366; color: #0b3d1f; }
+.btn--whatsapp:hover { background: #1ebe5b; }
+.btn--ghost { background: var(--white); color: var(--aegean-blue); border-color: var(--aegean-blue); }
+.btn--ghost:hover { background: var(--aegean-blue); color: var(--white); }
+
+.cta-row { display: flex; flex-wrap: wrap; gap: 1rem; margin-top: 1.5rem; }
+
+/* ===================================================================== */
+/* 5. RIGHT-TO-LEFT (ARABIC)                                              */
+/* ===================================================================== */
+/* Logical properties above (margin-inline-start, padding-inline) mean most
+   mirroring is automatic. A few explicit tweaks: */
+[dir="rtl"] .site-nav { margin-inline-start: auto; }
+[dir="rtl"] .hero { background: linear-gradient(200deg, var(--color-bg-soft), var(--white)); }
+
+/* ===================================================================== */
+/* 6. RESPONSIVE                                                          */
+/* ===================================================================== */
+@media (max-width: 860px) {
+  .menu-toggle { display: inline-flex; order: 3; margin-inline-start: auto; }
+  .lang-toggle { order: 2; }
+
+  .site-nav {
+    order: 4;
+    flex-basis: 100%;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.4rem;
+    margin: 0;
+    display: none;
+    padding-top: 0.5rem;
+  }
+  .site-nav.is-open { display: flex; }
+  .tab-btn { width: 100%; text-align: start; }
+
+  .header-inner { flex-wrap: wrap; }
+}
+
+@media (min-width: 861px) {
+  .footer-grid { grid-template-columns: 2fr 1fr; }
+}

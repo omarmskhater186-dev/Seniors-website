@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<!--
+  Seniors — bilingual (EN/AR) single-page marketing site.
+  • Three parts as tabs: Seniors (umbrella), Seniors Clinic, Seniors Connect.
+  • All visible text comes from assets/js/content.js (edit copy there).
+  • Phone / WhatsApp number lives in assets/config.js.
+  • The lang/dir attributes below are set automatically by main.js on load.
+-->
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Seniors — Integrated Geriatric Care, Cairo</title>
+  <meta name="description"
+        content="Seniors — Egypt’s integrated geriatric care ecosystem. Seniors Clinic and Seniors Connect under one trusted brand." />
+  <link rel="icon" href="assets/img/logo.svg" type="image/svg+xml" />
+  <link rel="stylesheet" href="assets/css/styles.css" />
+</head>
+<body data-lang="en">
+
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <!-- ============================ HEADER ============================ -->
+  <header class="site-header">
+    <div class="header-inner">
+
+      <!-- Brand / logo -->
+      <a class="brand" href="#seniors" data-tab="seniors">
+        <img src="assets/img/logo.svg" alt="Seniors 60+ logo" />
+        <span class="brand-text">
+          <span class="brand-name"    data-i18n="brand.name">Seniors</span>
+          <span class="brand-tagline" data-i18n="brand.tagline">Integrated geriatric care</span>
+        </span>
+      </a>
+
+      <!-- Language toggle (visible on every screen) -->
+      <button class="lang-toggle" type="button" data-lang-toggle
+              aria-label="Switch language">العربية</button>
+
+      <!-- Mobile menu button -->
+      <button class="menu-toggle" type="button" data-menu-toggle
+              aria-controls="primary-nav" aria-expanded="false" aria-label="Menu">☰</button>
+
+      <!-- The three parts as tabs -->
+      <nav id="primary-nav" class="site-nav" data-nav aria-label="Sections" role="tablist">
+        <button class="tab-btn" type="button" role="tab" data-tab="seniors"
+                aria-controls="seniors" data-i18n="nav.seniors">Seniors</button>
+        <button class="tab-btn" type="button" role="tab" data-tab="clinic"
+                aria-controls="clinic" data-i18n="nav.clinic">Seniors Clinic</button>
+        <button class="tab-btn" type="button" role="tab" data-tab="connect"
+                aria-controls="connect" data-i18n="nav.connect">Seniors Connect</button>
+      </nav>
+
+    </div>
+  </header>
+
+  <!-- ============================= MAIN ============================= -->
+  <main id="main">
+
+    <!-- -------------------- PART 1: Seniors (umbrella) -------------------- -->
+    <section id="seniors" class="tab-panel" role="tabpanel" aria-labelledby="seniors-h">
+      <div class="hero">
+        <div class="container">
+          <h1 id="seniors-h" data-panel-heading data-i18n="seniors.title">Seniors</h1>
+          <p class="lead" data-i18n="seniors.lead">Egypt’s integrated geriatric care ecosystem.</p>
+          <p data-i18n="seniors.body">Welcome to Seniors.</p>
+          <div class="cta-row">
+            <a class="btn btn--whatsapp" data-whatsapp href="#" target="_blank" rel="noopener"
+               data-i18n="cta.book">Book / Contact us</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- -------------------- PART 2: Seniors Clinic -------------------- -->
+    <section id="clinic" class="tab-panel" role="tabpanel" aria-labelledby="clinic-h" hidden>
+      <div class="hero">
+        <div class="container">
+          <h1 id="clinic-h" data-panel-heading data-i18n="clinic.title">Seniors Clinic</h1>
+          <p class="lead" data-i18n="clinic.lead">Specialist geriatric medical care.</p>
+          <p data-i18n="clinic.body">Our medical practice.</p>
+          <div class="cta-row">
+            <a class="btn btn--whatsapp" data-whatsapp href="#" target="_blank" rel="noopener"
+               data-i18n="cta.book">Book / Contact us</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- -------------------- PART 3: Seniors Connect -------------------- -->
+    <section id="connect" class="tab-panel" role="tabpanel" aria-labelledby="connect-h" hidden>
+      <div class="hero">
+        <div class="container">
+          <h1 id="connect-h" data-panel-heading data-i18n="connect.title">Seniors Connect</h1>
+          <p class="lead" data-i18n="connect.lead">Community and life-enrichment programmes.</p>
+          <p data-i18n="connect.body">Our community programme.</p>
+          <div class="cta-row">
+            <a class="btn btn--whatsapp" data-whatsapp href="#" target="_blank" rel="noopener"
+               data-i18n="cta.book">Book / Contact us</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ============================ FOOTER ============================ -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <h3 data-i18n="brand.name">Seniors</h3>
+          <p data-i18n="footer.tagline">Calm, trustworthy, warm care for older adults and their families.</p>
+        </div>
+        <div>
+          <h3 data-i18n="footer.contact">Contact</h3>
+          <p><a data-whatsapp href="#" target="_blank" rel="noopener"
+                data-i18n="cta.whatsapp">Chat on WhatsApp</a></p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span data-i18n="brand.name">Seniors</span> ·
+        <span data-i18n="footer.rights">All rights reserved.</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts: config first, then content, then behaviour. -->
+  <script src="assets/config.js"></script>
+  <script src="assets/js/content.js"></script>
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

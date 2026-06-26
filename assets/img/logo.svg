@@ -1,0 +1,18 @@
+<!--
+  Seniors logo PLACEHOLDER — the "60+" mark with a medical cross.
+  Replace this file with the real logo asset when available.
+  Colours use the brand palette (Aegean Blue + Baby Blue). Do not recolour
+  arbitrarily; if you swap the asset, keep this calm two-blue style.
+-->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 80" role="img"
+     aria-label="Seniors 60 plus logo">
+  <!-- "60" -->
+  <text x="4" y="60" font-family="Montserrat, Arial, sans-serif"
+        font-size="62" font-weight="800" fill="#144053">60</text>
+
+  <!-- "+" rendered as a medical cross in Baby Blue -->
+  <g transform="translate(120 14)">
+    <rect x="18" y="0"  width="16" height="52" rx="4" fill="#6dcad6"/>
+    <rect x="0"  y="18" width="52" height="16" rx="4" fill="#6dcad6"/>
+  </g>
+</svg>
