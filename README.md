@@ -1,78 +1,75 @@
-# Seniors — bilingual marketing website
+# 60+ Seniors Clinic — bilingual website
 
-A calm, senior-friendly, **bilingual (English / Arabic)** marketing site for
-**Seniors**, an integrated geriatric care organisation in Cairo. One umbrella
-brand with three parts, shown as tabs:
+A calm, trustworthy, **bilingual (English / Arabic)** single-page website for the
+**60+ Seniors Clinic**, a geriatric medicine practice in **Nasr City, Cairo**,
+led by **Professor Mohamed Shawky Khater**.
 
-1. **Seniors** — the umbrella brand & overview (landing)
-2. **Seniors Clinic** — the geriatric medical practice
-3. **Seniors Connect** — the community / life-enrichment programme
-
-Built as a plain static site (HTML + CSS + a little JavaScript) — **no build
-step**, easy to edit, easy to host anywhere.
+The whole site is **one self-contained file — `index.html`** (HTML, CSS and
+JavaScript all inline). There is no build step: just open it in a browser.
 
 ## Preview it
 
-Either just open `index.html` in a browser, or run a tiny local server:
+Double-click `index.html`, or run a tiny local server:
 
 ```bash
 python3 -m http.server 8000
 # then open http://localhost:8000
 ```
 
-Use the **العربية / English** button (top-right) to switch languages — the
-whole layout mirrors to right-to-left for Arabic.
+Use the **العربية / English** button (top-right) to switch languages — the whole
+layout mirrors to true right-to-left for Arabic.
 
-## Where to edit things
+## What's on the page (single page, sections)
 
-| You want to change…                    | Edit this file              |
-|----------------------------------------|-----------------------------|
-| Any text (English **and** Arabic)      | `assets/js/content.js`      |
-| The WhatsApp number / contact details  | `assets/config.js`          |
-| Colours, fonts, spacing, layout        | `assets/css/styles.css`     |
-| The logo                               | `assets/img/logo.svg`       |
-| Page structure                         | `index.html`                |
+1. **Hero** — Prof. Khater's photo, name and title, one reassuring line, and a
+   clear primary action (book a visit / WhatsApp).
+2. **About Prof. Khater** — brief, credible, human.
+3. **Services** — in plain family language: home visits, complex/multiple-condition
+   care, medication review, memory & dementia, falls, full geriatric assessment.
+4. **Home visits** — its own prominent section (the key differentiator).
+5. **Contact** — phone, WhatsApp, location and clinic hours, repeated clearly.
 
-**Content is kept EN/AR side by side** in `content.js`, e.g.:
+## Where to edit things (all inside `index.html`)
+
+| You want to change…                         | Edit this part of `index.html`              |
+|---------------------------------------------|---------------------------------------------|
+| Phone / WhatsApp number / contact details   | the **`CONFIG`** object (top of the script) |
+| Any text (English **and** Arabic)           | the **`I18N`** dictionary (in the script)   |
+| Colours, fonts, spacing, layout             | the **`<style>`** block in the `<head>`     |
+| The logo                                    | the **`.brand-logo`** placeholder in the header |
+| Photos                                      | replace each **grey image placeholder**     |
+
+Content is kept EN/AR side by side, e.g.:
 
 ```js
-"clinic.lead": { en: "Specialist geriatric medical care.",
-                 ar: "رعاية طبية متخصصة لكبار السن." },
+"svc.home.h": { en:"Home visits", ar:"الزيارات المنزلية" },
 ```
 
-Change the words between the quotes — nothing else.
+## Placeholders to fill in
+
+Everything we still need from you is **clearly marked** in the page:
+
+- **Contact** — phone, WhatsApp, address, clinic hours (in `CONFIG` and the
+  hours rows). Look for `XX`, `…`, and `[ … ]`.
+- **About** — specific credentials (university, years in practice, hospital
+  affiliations) are marked **`[To confirm]`**.
+- **Photos** — each grey box states the **exact size** and **what to show**
+  (Prof. Khater portrait, a home-visit photo, the clinic location).
+- **Logo** — the “60+” box in the header is a placeholder; drop in the real file.
 
 ## Brand
 
-- **Fonts:** Montserrat (English), DG Sahabah (Arabic). Montserrat and a Cairo
-  fallback load from Google Fonts; drop the real `DGSahabah.woff2` into
-  `assets/fonts/` to use the exact Arabic face.
-- **Colours:** Aegean `#144053`, Baby `#6dcad6`, Oceana `#489399`,
-  Metal Gray `#9c9da0`, Cloudy Gray `#dddddd`, White `#ffffff`.
+- **Colours:** Aegean `#144053` (primary), Baby `#6dcad6`, Oceana `#489399`,
+  Metal Gray `#9c9da0`, Cloudy Gray `#dddddd`, White `#ffffff` (dominant).
+  Used sparingly — mostly Aegean Blue on white.
+- **Fonts:** Montserrat (English); DG Sahabah (Arabic) with **Cairo** as a
+  graceful fallback. Drop a real `DGSahabah.woff2` into `assets/fonts/` to use
+  the exact Arabic face.
 - **Accessibility:** large default text, generous tap targets, WCAG-AA contrast,
-  visible keyboard focus, skip link, responsive for phone / iPad / desktop.
+  visible keyboard focus, skip link, true RTL, mobile-first responsive.
 
-## WhatsApp booking
+## Notes
 
-Every **Book / Contact us** button opens a WhatsApp chat. The number is a
-clearly-marked placeholder (`20XXXXXXXXXX`) in **one place** — `assets/config.js`.
-Swap it for the real number and you're done.
-
-## Build status (stages)
-
-- [x] **Stage 1 — Structure & shell** (nav, EN/AR toggle, branding, responsive, footer)
-- [x] **Stage 2 — Seniors (umbrella) landing** (hero, "what is Seniors", the three
-      parts as cards with a path into each, values strip, closing CTA)
-- [x] **Stage 3 — Seniors Clinic** (services: clinic/home visits, telemedicine,
-      WhatsApp consultations; who it's for; WhatsApp booking CTA)
-- [x] **Stage 4 — Seniors Connect** (activities: Memory Café, book club, walks,
-      cultural trips, technology sessions, Memories Studio; join/volunteer; contact)
-- [x] **Stage 5 — Polish** (imagery placeholders, shared contact section,
-      consistent spacing, final EN/AR pass in both directions — no RTL overflow)
-
-## Live preview
-
-The site auto-deploys to **GitHub Pages** on every push to the development branch:
-**https://omarmskhater186-dev.github.io/Seniors-website/**
-
-(Workflow: `.github/workflows/pages.yml`.)
+- `seniors-umbrella.html` is the earlier multi-brand “Seniors” concept
+  (Clinic + Connect), kept for reference. The live site is `index.html`.
+- The code is heavily commented so it can later be moved to **WordPress**.

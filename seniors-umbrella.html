@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<!--
+  Seniors — bilingual (EN/AR) single-page marketing site.
+  • Three parts as tabs: Seniors (umbrella), Seniors Clinic, Seniors Connect.
+  • All visible text comes from assets/js/content.js (edit copy there).
+  • Phone / WhatsApp number lives in assets/config.js.
+  • The lang/dir attributes below are set automatically by main.js on load.
+-->
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Seniors — Integrated Geriatric Care, Cairo</title>
+  <meta name="description"
+        content="Seniors — Egypt’s integrated geriatric care ecosystem. Seniors Clinic and Seniors Connect under one trusted brand." />
+  <link rel="icon" href="assets/img/logo.svg" type="image/svg+xml" />
+  <link rel="stylesheet" href="assets/css/styles.css" />
+</head>
+<body data-lang="en">
+
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <!-- ============================ HEADER ============================ -->
+  <header class="site-header">
+    <div class="header-inner">
+
+      <!-- Brand / logo -->
+      <a class="brand" href="#seniors" data-tab="seniors">
+        <img src="assets/img/logo.svg" alt="Seniors 60+ logo" />
+        <span class="brand-text">
+          <span class="brand-name"    data-i18n="brand.name">Seniors</span>
+          <span class="brand-tagline" data-i18n="brand.tagline">Integrated geriatric care</span>
+        </span>
+      </a>
+
+      <!-- Language toggle (visible on every screen) -->
+      <button class="lang-toggle" type="button" data-lang-toggle
+              aria-label="Switch language">العربية</button>
+
+      <!-- Mobile menu button -->
+      <button class="menu-toggle" type="button" data-menu-toggle
+              aria-controls="primary-nav" aria-expanded="false" aria-label="Menu">☰</button>
+
+      <!-- The three parts as tabs -->
+      <nav id="primary-nav" class="site-nav" data-nav aria-label="Sections" role="tablist">
+        <button class="tab-btn" type="button" role="tab" data-tab="seniors"
+                aria-controls="seniors" data-i18n="nav.seniors">Seniors</button>
+        <button class="tab-btn" type="button" role="tab" data-tab="clinic"
+                aria-controls="clinic" data-i18n="nav.clinic">Seniors Clinic</button>
+        <button class="tab-btn" type="button" role="tab" data-tab="connect"
+                aria-controls="connect" data-i18n="nav.connect">Seniors Connect</button>
+      </nav>
+
+    </div>
+  </header>
+
+  <!-- ============================= MAIN ============================= -->
+  <main id="main">
+
+    <!-- -------------------- PART 1: Seniors (umbrella) -------------------- -->
+    <section id="seniors" class="tab-panel" role="tabpanel" aria-labelledby="seniors-h">
+
+      <!-- Hero -->
+      <div class="hero">
+        <div class="container">
+          <p class="eyebrow" data-i18n="seniors.lead">Egypt’s integrated geriatric care ecosystem.</p>
+          <h1 id="seniors-h" data-panel-heading data-i18n="seniors.title">Seniors</h1>
+          <p class="hero-body" data-i18n="seniors.body">Welcome to Seniors.</p>
+          <div class="cta-row">
+            <a class="btn btn--whatsapp" data-whatsapp href="#" target="_blank" rel="noopener"
+               data-i18n="cta.book">Book / Contact us</a>
+            <button class="btn btn--ghost" type="button" data-tab="clinic"
+                    data-i18n="seniors.parts.clinic.cta">Explore the Clinic</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- What is Seniors -->
+      <div class="section">
+        <div class="container narrow">
+          <h2 data-i18n="seniors.about.title">One umbrella, complete care</h2>
+          <p data-i18n="seniors.about.body">Seniors is built around the whole person.</p>
+        </div>
+      </div>
+
+      <!-- The three parts -->
+      <div class="section section--soft">
+        <div class="container">
+          <h2 class="section-title" data-i18n="seniors.parts.title">Three parts, one Seniors</h2>
+          <div class="grid-cards grid-3">
+
+            <!-- Card: Seniors (umbrella, current) -->
+            <article class="card">
+              <span class="card-badge" data-i18n="seniors.parts.umbrella.tag">You are here</span>
+              <h3 data-i18n="seniors.parts.umbrella.title">Seniors</h3>
+              <p data-i18n="seniors.parts.umbrella.desc">The umbrella that ties it together.</p>
+            </article>
+
+            <!-- Card: Seniors Clinic (path into it) -->
+            <article class="card card--link">
+              <h3 data-i18n="seniors.parts.clinic.title">Seniors Clinic</h3>
+              <p data-i18n="seniors.parts.clinic.desc">Specialist geriatric medicine.</p>
+              <button class="btn btn--primary" type="button" data-tab="clinic"
+                      data-i18n="seniors.parts.clinic.cta">Explore the Clinic</button>
+            </article>
+
+            <!-- Card: Seniors Connect (path into it) -->
+            <article class="card card--link">
+              <h3 data-i18n="seniors.parts.connect.title">Seniors Connect</h3>
+              <p data-i18n="seniors.parts.connect.desc">A warm community programme.</p>
+              <button class="btn btn--primary" type="button" data-tab="connect"
+                      data-i18n="seniors.parts.connect.cta">Explore Connect</button>
+            </article>
+
+          </div>
+        </div>
+      </div>
+
+      <!-- Why families choose Seniors -->
+      <div class="section">
+        <div class="container">
+          <h2 class="section-title" data-i18n="seniors.values.title">Why families choose Seniors</h2>
+          <div class="grid-cards grid-3">
+            <div class="feature">
+              <span class="feature-mark" aria-hidden="true">♥</span>
+              <h3 data-i18n="seniors.values.calm.title">Calm &amp; unhurried</h3>
+              <p data-i18n="seniors.values.calm.desc">Time to listen, explain, and reassure.</p>
+            </div>
+            <div class="feature">
+              <span class="feature-mark" aria-hidden="true">✚</span>
+              <h3 data-i18n="seniors.values.trust.title">Trustworthy expertise</h3>
+              <p data-i18n="seniors.values.trust.desc">Specialist care you can rely on.</p>
+            </div>
+            <div class="feature">
+              <span class="feature-mark" aria-hidden="true">☼</span>
+              <h3 data-i18n="seniors.values.warm.title">Warm &amp; welcoming</h3>
+              <p data-i18n="seniors.values.warm.desc">Friendship and belonging.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Closing CTA -->
+      <div class="section section--cta">
+        <div class="container narrow center">
+          <h2 data-i18n="seniors.cta.title">Not sure where to start?</h2>
+          <p data-i18n="seniors.cta.body">Send us a message on WhatsApp.</p>
+          <div class="cta-row center-row">
+            <a class="btn btn--whatsapp" data-whatsapp href="#" target="_blank" rel="noopener"
+               data-i18n="cta.book">Book / Contact us</a>
+          </div>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- -------------------- PART 2: Seniors Clinic -------------------- -->
+    <section id="clinic" class="tab-panel" role="tabpanel" aria-labelledby="clinic-h" hidden>
+
+      <!-- Hero (with imagery placeholder) -->
+      <div class="hero">
+        <div class="container hero-split">
+          <div class="hero-text">
+            <p class="eyebrow" data-i18n="clinic.lead">Specialist geriatric medical care.</p>
+            <h1 id="clinic-h" data-panel-heading data-i18n="clinic.title">Seniors Clinic</h1>
+            <p class="hero-body" data-i18n="clinic.body">Expert, unhurried medical care.</p>
+            <div class="cta-row">
+              <a class="btn btn--whatsapp" data-whatsapp href="#" target="_blank" rel="noopener"
+                 data-i18n="cta.book">Book / Contact us</a>
+            </div>
+          </div>
+          <!-- Imagery placeholder — swap for a real photo of the clinic/doctor -->
+          <div class="media-placeholder" aria-hidden="true">
+            <span class="media-mark">✚</span>
+            <span class="media-label">Clinic photo</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Services -->
+      <div class="section">
+        <div class="container">
+          <h2 class="section-title" data-i18n="clinic.services.title">How we care for you</h2>
+          <p class="section-intro" data-i18n="clinic.services.intro">Four ways to reach our doctors.</p>
+          <div class="grid-cards grid-2">
+            <div class="feature feature--left">
+              <span class="feature-mark" aria-hidden="true">🏥</span>
+              <h3 data-i18n="clinic.svc.visit.title">Clinic visits</h3>
+              <p data-i18n="clinic.svc.visit.desc">Comprehensive geriatric assessments.</p>
+            </div>
+            <div class="feature feature--left">
+              <span class="feature-mark" aria-hidden="true">🏠</span>
+              <h3 data-i18n="clinic.svc.home.title">Home visits</h3>
+              <p data-i18n="clinic.svc.home.desc">Our doctors come to you.</p>
+            </div>
+            <div class="feature feature--left">
+              <span class="feature-mark" aria-hidden="true">💻</span>
+              <h3 data-i18n="clinic.svc.tele.title">Telemedicine</h3>
+              <p data-i18n="clinic.svc.tele.desc">Video consultations from anywhere.</p>
+            </div>
+            <div class="feature feature--left">
+              <span class="feature-mark" aria-hidden="true">💬</span>
+              <h3 data-i18n="clinic.svc.whatsapp.title">WhatsApp consultations</h3>
+              <p data-i18n="clinic.svc.whatsapp.desc">Message our care team.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Who it's for -->
+      <div class="section section--soft">
+        <div class="container narrow">
+          <h2 data-i18n="clinic.who.title">Who it’s for</h2>
+          <p data-i18n="clinic.who.intro">Seniors Clinic supports older adults and their families.</p>
+          <ul class="check-list">
+            <li data-i18n="clinic.who.1">Managing long-term conditions.</li>
+            <li data-i18n="clinic.who.2">Memory concerns and dementia care.</li>
+            <li data-i18n="clinic.who.3">Mobility, falls prevention, medication review.</li>
+            <li data-i18n="clinic.who.4">Families who want one trusted doctor.</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Booking CTA -->
+      <div class="section section--cta">
+        <div class="container narrow center">
+          <h2 data-i18n="clinic.book.title">Book an appointment</h2>
+          <p data-i18n="clinic.book.body">Booking is simple — tap the button to start a WhatsApp chat.</p>
+          <div class="cta-row center-row">
+            <a class="btn btn--whatsapp" data-whatsapp href="#" target="_blank" rel="noopener"
+               data-i18n="cta.book">Book / Contact us</a>
+          </div>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- -------------------- PART 3: Seniors Connect -------------------- -->
+    <section id="connect" class="tab-panel" role="tabpanel" aria-labelledby="connect-h" hidden>
+
+      <!-- Hero (with imagery placeholder) -->
+      <div class="hero">
+        <div class="container hero-split">
+          <div class="hero-text">
+            <p class="eyebrow" data-i18n="connect.lead">Community and life-enrichment programmes.</p>
+            <h1 id="connect-h" data-panel-heading data-i18n="connect.title">Seniors Connect</h1>
+            <p class="hero-body" data-i18n="connect.body">Good health is more than medicine.</p>
+            <div class="cta-row">
+              <a class="btn btn--whatsapp" data-whatsapp href="#" target="_blank" rel="noopener"
+                 data-i18n="cta.book">Book / Contact us</a>
+            </div>
+          </div>
+          <!-- Imagery placeholder — swap for a real photo of a community activity -->
+          <div class="media-placeholder" aria-hidden="true">
+            <span class="media-mark">☼</span>
+            <span class="media-label">Community photo</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Activities -->
+      <div class="section">
+        <div class="container">
+          <h2 class="section-title" data-i18n="connect.act.title">Our activities</h2>
+          <p class="section-intro" data-i18n="connect.act.intro">A varied weekly programme.</p>
+          <div class="grid-cards grid-3">
+            <article class="card">
+              <h3 data-i18n="connect.act.memory.title">Memory Café</h3>
+              <p data-i18n="connect.act.memory.desc">A relaxed, supportive gathering.</p>
+            </article>
+            <article class="card">
+              <h3 data-i18n="connect.act.book.title">Book club</h3>
+              <p data-i18n="connect.act.book.desc">Lively conversations about great reads.</p>
+            </article>
+            <article class="card">
+              <h3 data-i18n="connect.act.walks.title">Walks</h3>
+              <p data-i18n="connect.act.walks.desc">Gentle group walks at an easy pace.</p>
+            </article>
+            <article class="card">
+              <h3 data-i18n="connect.act.trips.title">Cultural trips</h3>
+              <p data-i18n="connect.act.trips.desc">Outings to Cairo’s museums and landmarks.</p>
+            </article>
+            <article class="card">
+              <h3 data-i18n="connect.act.tech.title">Technology sessions</h3>
+              <p data-i18n="connect.act.tech.desc">Friendly help with phones and apps.</p>
+            </article>
+            <article class="card">
+              <h3 data-i18n="connect.act.studio.title">Memories Studio</h3>
+              <p data-i18n="connect.act.studio.desc">Recording life stories to keep and share.</p>
+            </article>
+          </div>
+        </div>
+      </div>
+
+      <!-- Join / volunteer -->
+      <div class="section section--soft">
+        <div class="container">
+          <h2 class="section-title" data-i18n="connect.join.title">Join us or lend a hand</h2>
+          <div class="grid-cards grid-2">
+            <article class="card card--link">
+              <h3 data-i18n="connect.join.member.title">Become a member</h3>
+              <p data-i18n="connect.join.member.desc">Anyone is welcome.</p>
+              <a class="btn btn--primary" data-whatsapp href="#" target="_blank" rel="noopener"
+                 data-i18n="cta.book">Book / Contact us</a>
+            </article>
+            <article class="card card--link">
+              <h3 data-i18n="connect.join.volunteer.title">Volunteer with us</h3>
+              <p data-i18n="connect.join.volunteer.desc">Share your time, skills or company.</p>
+              <a class="btn btn--primary" data-whatsapp href="#" target="_blank" rel="noopener"
+                 data-i18n="cta.whatsapp">Chat on WhatsApp</a>
+            </article>
+          </div>
+        </div>
+      </div>
+
+      <!-- Contact CTA -->
+      <div class="section section--cta">
+        <div class="container narrow center">
+          <h2 data-i18n="connect.contact.title">Come say hello</h2>
+          <p data-i18n="connect.contact.body">Curious about Seniors Connect? Send us a message.</p>
+          <div class="cta-row center-row">
+            <a class="btn btn--whatsapp" data-whatsapp href="#" target="_blank" rel="noopener"
+               data-i18n="cta.book">Book / Contact us</a>
+          </div>
+        </div>
+      </div>
+
+    </section>
+
+  </main>
+
+  <!-- ===================== SHARED CONTACT SECTION ===================== -->
+  <!-- Appears on every tab. Phone / email / location are filled from
+       assets/config.js by main.js, so they live in one place. -->
+  <section class="contact" aria-labelledby="contact-h">
+    <div class="container">
+      <h2 id="contact-h" class="section-title" data-i18n="contact.title">Get in touch</h2>
+      <p class="section-intro" data-i18n="contact.body">We’re here to help you and your family.</p>
+      <div class="contact-grid">
+        <a class="contact-item" data-whatsapp href="#" target="_blank" rel="noopener">
+          <span class="contact-mark" aria-hidden="true">💬</span>
+          <span class="contact-label" data-i18n="contact.whatsappLabel">WhatsApp</span>
+          <span class="contact-value" data-i18n="cta.whatsapp">Chat on WhatsApp</span>
+        </a>
+        <a class="contact-item" data-contact-phone href="#">
+          <span class="contact-mark" aria-hidden="true">📞</span>
+          <span class="contact-label" data-i18n="contact.phoneLabel">Phone</span>
+          <span class="contact-value" data-contact-phone-text>+20 XX XXX XXXX</span>
+        </a>
+        <a class="contact-item" data-contact-email href="#">
+          <span class="contact-mark" aria-hidden="true">✉️</span>
+          <span class="contact-label" data-i18n="contact.emailLabel">Email</span>
+          <span class="contact-value" data-contact-email-text>hello@seniors.example</span>
+        </a>
+        <div class="contact-item">
+          <span class="contact-mark" aria-hidden="true">📍</span>
+          <span class="contact-label" data-i18n="contact.addressLabel">Location</span>
+          <span class="contact-value" data-contact-address>Cairo, Egypt</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================ FOOTER ============================ -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <h3 data-i18n="brand.name">Seniors</h3>
+          <p data-i18n="footer.tagline">Calm, trustworthy, warm care for older adults and their families.</p>
+        </div>
+        <div>
+          <h3 data-i18n="footer.contact">Contact</h3>
+          <p><a data-whatsapp href="#" target="_blank" rel="noopener"
+                data-i18n="cta.whatsapp">Chat on WhatsApp</a></p>
+          <p data-contact-address>Cairo, Egypt</p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span data-i18n="brand.name">Seniors</span> ·
+        <span data-i18n="footer.rights">All rights reserved.</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts: config first, then content, then behaviour. -->
+  <script src="assets/config.js"></script>
+  <script src="assets/js/content.js"></script>
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
